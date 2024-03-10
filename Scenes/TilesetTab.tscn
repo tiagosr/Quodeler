@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bup3qxt6i8wo6"]
+
+[node name="TilesetTab" type="VBoxContainer"]
+
+[node name="TilesetSelectorScroll" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 64)
+layout_direction = 2
+layout_mode = 2
+
+[node name="TilesetSelector" type="HBoxContainer" parent="TilesetSelectorScroll"]
+layout_mode = 2
+
+[node name="TilesetScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 250)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TilesetViewer" type="TextureRect" parent="TilesetScrollContainer"]
+layout_mode = 2
+stretch_mode = 4
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 3
+
+[node name="UVTilesizeLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "UV Tilesize:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpinBox_UV_X" type="SpinBox" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../SpinBox_UV_Y")
+focus_next = NodePath("../SpinBox_UV_Y")
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"
+
+[node name="SpinBox_UV_Y" type="SpinBox" parent="GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SpinBox_UV_X" type="SpinBox" parent="GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"
+
+[node name="UVTilesizeLabel2" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "3D Tilescale:"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpinBox_UV_X" type="SpinBox" parent="GridContainer/HBoxContainer3"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../SpinBox_UV_Y")
+focus_next = NodePath("../SpinBox_UV_Y")
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"
+
+[node name="SpinBox_UV_Y" type="SpinBox" parent="GridContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(2.08165e-12, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SpinBox_UV_X" type="SpinBox" parent="GridContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 1.0
+max_value = 512.0
+value = 16.0
+exp_edit = true
+rounded = true
+allow_greater = true
+suffix = "px"

@@ -1,0 +1,9 @@
+[gd_resource type="World3D" load_steps=3 format=3 uid="uid://dlo1lut3c6wjs"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_udb76"]
+
+[sub_resource type="Environment" id="Environment_1gt5r"]
+
+[resource]
+environment = SubResource("Environment_1gt5r")
+camera_attributes = SubResource("CameraAttributesPractical_udb76")

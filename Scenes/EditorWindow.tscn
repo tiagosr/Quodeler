@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://cid83xghgegbv"]
+
+[ext_resource type="Script" path="res://Scripts/MainScript.gd" id="1_vkioj"]
+[ext_resource type="World3D" uid="uid://dlo1lut3c6wjs" path="res://BaseWorldScene.tres" id="2_qqqs8"]
+[ext_resource type="PackedScene" uid="uid://bwwwkj44a7gax" path="res://Scenes/BaseScene.tscn" id="3_2v7wa"]
+[ext_resource type="PackedScene" uid="uid://bup3qxt6i8wo6" path="res://Scenes/TilesetTab.tscn" id="4_vmd65"]
+
+[node name="EditorWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vkioj")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 640
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SceneViewport" type="SubViewport" parent="HSplitContainer/SubViewportContainer"]
+world_3d = ExtResource("2_qqqs8")
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="BaseScene" parent="HSplitContainer/SubViewportContainer/SceneViewport" instance=ExtResource("3_2v7wa")]
+
+[node name="Sidebar" type="Panel" parent="HSplitContainer"]
+custom_minimum_size = Vector2(480, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabBar" type="TabBar" parent="HSplitContainer/Sidebar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+tab_count = 5
+tab_0/title = "Tileset"
+tab_1/title = "UVs"
+tab_2/title = "Paint"
+tab_3/title = "Transform"
+tab_4/title = "Scene"
+
+[node name="TabPanelContainer" type="PanelContainer" parent="HSplitContainer/Sidebar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TilesetTab" parent="HSplitContainer/Sidebar/TabPanelContainer" instance=ExtResource("4_vmd65")]
+layout_mode = 2
+
+[node name="UVsTab" type="VBoxContainer" parent="HSplitContainer/Sidebar/TabPanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Sidebar/TabPanelContainer/UVsTab"]
+layout_mode = 2
+text = "UV tab"
+
+[node name="PaintTab" type="VBoxContainer" parent="HSplitContainer/Sidebar/TabPanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Sidebar/TabPanelContainer/PaintTab"]
+layout_mode = 2
+text = "Paint tab"
+
+[node name="TransformTab" type="VBoxContainer" parent="HSplitContainer/Sidebar/TabPanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Sidebar/TabPanelContainer/TransformTab"]
+layout_mode = 2
+text = "Transform tab"
+
+[node name="SceneTab" type="VBoxContainer" parent="HSplitContainer/Sidebar/TabPanelContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Sidebar/TabPanelContainer/SceneTab"]
+layout_mode = 2
+text = "Scene tab"
