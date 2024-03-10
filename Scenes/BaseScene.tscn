@@ -1,10 +1,28 @@
-[gd_scene format=3 uid="uid://bwwwkj44a7gax"]
+[gd_scene load_steps=5 format=3 uid="uid://bwwwkj44a7gax"]
+
+[ext_resource type="Script" path="res://Scripts/BaseScene.gd" id="1_2ihwt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tflt4"]
+sky_top_color = Color(0.505882, 1, 0.952941, 1)
+sky_horizon_color = Color(1, 1, 0.670588, 1)
+
+[sub_resource type="Sky" id="Sky_mbkfd"]
+sky_material = SubResource("ProceduralSkyMaterial_tflt4")
+
+[sub_resource type="Environment" id="Environment_gn4od"]
+background_mode = 2
+sky = SubResource("Sky_mbkfd")
 
 [node name="BaseScene" type="Node3D"]
+script = ExtResource("1_2ihwt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.93004, -0.100959, 0.353318, 1.08334e-08, 0.961516, 0.274748, -0.367459, -0.255527, 0.894248, 1.23844, 0.771585, 3)
 top_level = true
+environment = SubResource("Environment_gn4od")
 current = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07445, 1.21777, 0)
